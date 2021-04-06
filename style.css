@@ -35,7 +35,7 @@
   }
 }
 
-@media screen and (max-width: 450px){
+@media screen and (max-width: 480px){
   .header {
     max-width: 100%;
   }
@@ -45,7 +45,7 @@
     margin: 0 0 41px;
 }
 
-@media screen and (max-width: 450px){
+@media screen and (max-width: 480px){
   .header__vector-logo {
     margin: 0 0 0 27px;
 }
@@ -68,7 +68,7 @@
   }
 }
 
-@media screen and (max-width: 450px){
+@media screen and (max-width: 480px){
   .content {
     max-width: calc(100% - 38px);
   }
@@ -82,7 +82,7 @@
     padding: 40px 0 0;
 }
 
-@media screen and (max-width: 450px){
+@media screen and (max-width: 480px){
   .profile {
     flex-direction: column;
   }
@@ -157,7 +157,7 @@
     outline-offset: 7px;
 }
 
-@media screen and (max-width: 450px){
+@media screen and (max-width: 480px){
   .profile__button_type_edit {
     width: 8px;
     outline-offset: 5px;
@@ -187,7 +187,7 @@
   }
 }
 
-@media screen and (max-width: 450px){
+@media screen and (max-width: 480px){
   .profile__button-wrapper {
     max-width: 100%;
     margin: 0;
@@ -215,10 +215,25 @@
     row-gap: 20px;
 }
 
+@media screen and (max-width: 680px){
+  .cards__list {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    column-gap: 12px;
+  }
+}
+
+@media screen and (max-width: 480px){
+  .cards__list {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 1fr);
+    column-gap: 0;
+  }
+}
 
 .cards__item {
     display: flex;
-    max-width: 282px;
+    max-width: 100%;
     min-height: 361px;
     margin: 0;
     padding: 0;
