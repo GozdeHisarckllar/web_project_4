@@ -16,6 +16,9 @@
     -moz-text-size-adjust: 100%;
 }
 
+.hover-effect {
+  transition: all .4s ease-in-out;
+}
 .header {
     max-width: calc(100% - 400px);
     margin: 0 auto;
@@ -35,7 +38,7 @@
   }
 }
 
-@media screen and (max-width: 480px){
+@media screen and (max-width: 510px){
   .header {
     max-width: 100%;
   }
@@ -45,9 +48,9 @@
     margin: 0 0 41px;
 }
 
-@media screen and (max-width: 480px){
+@media screen and (max-width: 510px){
   .header__vector-logo {
-    margin: 0 0 0 27px;
+    margin: 0 0 32px 27px;
 }
 }
 
@@ -68,7 +71,7 @@
   }
 }
 
-@media screen and (max-width: 480px){
+@media screen and (max-width: 510px){
   .content {
     max-width: calc(100% - 38px);
   }
@@ -82,27 +85,42 @@
     padding: 40px 0 0;
 }
 
-@media screen and (max-width: 480px){
+@media screen and (max-width: 510px){
   .profile {
+    padding-top: 42px;
     flex-direction: column;
   }
 }
 
 .profile__avatar-picture {
-    width: 120px;
+    max-width: 120px;
     margin: 0 30px 0 0;
     grid-area: title;
     border-radius: 50%;
 }
 
+@media screen and (max-width: 510px){
+  .profile__avatar-picture {
+    margin: 0;
+}
+}
+
 .profile__info {
     display: grid;
+    max-width: 415px;
+    margin: 0;
     grid-template-areas: 
     'title button'
     'subtitle subtitle';
     grid-template-columns: 9fr 1fr;/*373 42px*/
 }
 
+@media screen and (max-width: 510px){
+  .profile__info {
+    margin: 26px auto 0;
+    grid-template-columns: 9fr 1fr;
+  }
+}
 .profile__title-name {
     grid-area: title;
     margin: 0;
@@ -110,6 +128,10 @@
     font-weight: 500;
     font-size: 42px;
     line-height: 1.14;
+    text-align: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 @media screen and (max-width: 1024px){
@@ -124,7 +146,7 @@
   }
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 510px){
   .profile__title-name {
     font-size: 26px;
     text-align: center;
@@ -138,7 +160,7 @@
     line-height: 1.22;
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 510px){
   .profile__subtitle {
     text-align: center;
   }
@@ -157,7 +179,7 @@
     outline-offset: 7px;
 }
 
-@media screen and (max-width: 480px){
+@media screen and (max-width: 510px){
   .profile__button_type_edit {
     width: 8px;
     outline-offset: 5px;
@@ -173,13 +195,10 @@
   box-sizing: border-box;
   border-radius: 2px;
   margin: 0 0 0 18%;/*236px*/
+  align-self: center;
 }
 
-@media screen and (max-width: 1024px){
-  .profile__button-wrapper {
-    margin: 0 0 0 10%;
-  }
-}
+
 
 @media screen and (max-width: 768px){
   .profile__button-wrapper {
@@ -187,10 +206,10 @@
   }
 }
 
-@media screen and (max-width: 480px){
+@media screen and (max-width: 510px){
   .profile__button-wrapper {
     max-width: 100%;
-    margin: 0;
+    margin: 36px 0 0;
   }
 }
 .profile__button_type_add {
@@ -203,8 +222,14 @@
 .image-cards {
     padding: 50px 0 0 0;
 }
+
+@media screen and (max-width: 510px){
+  .image-cards {
+    padding-top: 36px;
+}
+}
 .cards__list {
-  max-width: 100%;
+    max-width: 100%;
     display: grid;
     margin: 0 auto;
     padding: 0;
@@ -215,6 +240,7 @@
     row-gap: 20px;
 }
 
+
 @media screen and (max-width: 680px){
   .cards__list {
     grid-template-columns: repeat(2, 1fr);
@@ -223,7 +249,7 @@
   }
 }
 
-@media screen and (max-width: 480px){
+@media screen and (max-width: 510px){
   .cards__list {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(6, 1fr);
@@ -244,15 +270,21 @@
 }
 
 .cards__info {
+  max-width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 25px 18px 0 21px;
+    text-overflow: ellipsis;
+    /*white-space: nowrap;*/
 }
 
 .cards__image {
-  width: 100%;
+  display: block;
+    max-width: 100%;
+    min-height: 202px;
     border-radius: 10px 10px 0px 0px;
+    object-fit: cover;
 }
 .cards__title {
     margin: 0;
@@ -260,18 +292,51 @@
     font-size: 24px;
     line-height: 1.2;
     color: #000000;
-
+    text-overflow: ellipsis;
 }
 
 .cards__heart-icon {
-    width: 21px;
+    position: absolute;
+    width: 1px;
+    height: 1px;
     overflow: hidden;
     clip: rect(0 0 0 0);
 }
 
 .cards__pseudo-icon {
-    width: 21px;
+    width: 22px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: middle; 
     background-image: url('./images/heart-icon.svg');
     background-size: cover;
+    opacity: 1;
+
+}
+
+.cards__heart-icon:checked + .cards__pseudo-icon {
+  background-image: url('./images/heart-icon-fill.svg');
+}
+
+.cards__heart-icon:hover:not(:checked) + .cards__pseudo-icon {
+  opacity: .5;
+}
+
+.footer {
+  padding: 68px 0 60px;
+}
+
+@media screen and (max-width: 510px){
+  .footer {
+    padding: 50px 0 30px;
+  }
+}
+
+.footer__copyright {
+  margin: 0;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 1.22;
+  color: #545454;
 
 }
