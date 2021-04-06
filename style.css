@@ -17,7 +17,11 @@
 }
 
 .hover-effect {
-  transition: all .4s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.hover-effect:hover {
+  opacity: .5;
 }
 .header {
     max-width: calc(100% - 400px);
@@ -109,6 +113,7 @@
     display: grid;
     max-width: 415px;
     margin: 0;
+    padding: 0;
     grid-template-areas: 
     'title button'
     'subtitle subtitle';
@@ -117,7 +122,8 @@
 
 @media screen and (max-width: 510px){
   .profile__info {
-    margin: 26px auto 0;
+    margin: 25px 0 0;
+    padding-bottom: 25px;
     grid-template-columns: 9fr 1fr;
   }
 }
@@ -148,8 +154,10 @@
 
 @media screen and (max-width: 510px){
   .profile__title-name {
-    font-size: 26px;
-    text-align: center;
+      font-size: 22px;
+      line-height: 1.20px;
+      text-align: center;
+      overflow: inherit;
   }
 }
 
@@ -158,10 +166,15 @@
     margin: 16px 0 0;
     font-size: 18px;
     line-height: 1.22;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 @media screen and (max-width: 510px){
   .profile__subtitle {
+    font-size: 14px;
+    line-height: 1.21;
     text-align: center;
   }
 }
@@ -183,6 +196,7 @@
   .profile__button_type_edit {
     width: 8px;
     outline-offset: 5px;
+    margin: 9px 0 0 15px;
   }
 }
 .profile__button-wrapper {
@@ -193,9 +207,11 @@
   display: flex;
   border: 2px solid #FFFFFF;
   box-sizing: border-box;
+  background-color: transparent;
   border-radius: 2px;
   margin: 0 0 0 18%;/*236px*/
   align-self: center;
+  cursor: pointer;
 }
 
 
@@ -228,6 +244,7 @@
     padding-top: 36px;
 }
 }
+
 .cards__list {
     max-width: 100%;
     display: grid;
@@ -273,10 +290,17 @@
   max-width: 100%;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     margin: 25px 18px 0 21px;
+    padding: 0;
     text-overflow: ellipsis;
     /*white-space: nowrap;*/
+}
+
+@media screen and (max-width: 510px){
+  .cards__info {
+    padding-bottom: 31px;
+  }
 }
 
 .cards__image {
@@ -311,9 +335,12 @@
     background-image: url('./images/heart-icon.svg');
     background-size: cover;
     opacity: 1;
-
+    transition: all .4s ease-in-out;
 }
 
+/*.check-effect {
+  transition: all .4s ease-in-out;
+}*/
 .cards__heart-icon:checked + .cards__pseudo-icon {
   background-image: url('./images/heart-icon-fill.svg');
 }
@@ -323,16 +350,33 @@
 }
 
 .footer {
+  max-width: calc(100% - 400px);
+  margin: 0 auto;
   padding: 68px 0 60px;
 }
 
+@media screen and (max-width: 1024px){
+  .footer {
+    max-width: calc(100% - 200px);
+  }
+}
+
+@media screen and (max-width: 768px){
+  .footer {
+    max-width: calc(100% - 100px);
+  }
+}
+ 
+
 @media screen and (max-width: 510px){
   .footer {
+    max-width: calc(100% - 38px);;
     padding: 50px 0 30px;
   }
 }
 
 .footer__copyright {
+  display: inline-block;
   margin: 0;
   font-weight: normal;
   font-size: 18px;
