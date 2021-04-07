@@ -23,8 +23,8 @@
           <p class="profile__subtitle">Explorer</p>
         </div>
         <button class="profile__button-wrapper hover-effect">
-        <img class="profile__button profile__button_type_add" src="./images/vector-plus.svg" alt="plus icon">
-        </button>
+          <img class="profile__button profile__button_type_add" src="./images/vector-plus.svg" alt="plus icon">
+        </button><!--button div background image pen plus-->
       </section>
       <section class="image-cards">
         <ul class="cards__list">
@@ -89,6 +89,20 @@
             </div>
           </li>
         </ul>
+      </section>
+      <section class="modal">
+        <form action="#" class="form-profile">
+          <button class="form-profile__close-icon hover-effect"></button>
+          <fieldset class="form-profile__input-container">
+            <legend class="form-profile__caption">Edit your profile</legend>
+            <label for="name" class="form-profile__label"></label>
+              <input type="text" class="form-profile__item form-profile__item_el_name" id="name" name="name">
+            <label for="subtitle" class="form-profile__label"></label>
+              <input type="text" class="form-profile__item form-profile__item_el_subtitle" id="subtitle" name="subtitle">
+            
+            <button type="submit" class="form-profile__button hover-effect">Save</button>
+          </fieldset>
+        </form>
       </section>
       </main>
       <footer class="footer">
