@@ -497,6 +497,12 @@
     color: #000;
 }
 
+@media screen and (max-width: 510px){
+  .form-profile__caption {
+    font-size: 18px;
+    line-height: 1.22;
+  }
+}
 .form-profile__item {
     max-width: 100%;
     width: 100%;
