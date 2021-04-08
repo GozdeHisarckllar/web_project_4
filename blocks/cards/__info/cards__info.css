@@ -1,0 +1,15 @@
+.cards__info {
+      max-width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin: 25px 18px 0 21px;
+      padding: 0;
+      text-overflow: ellipsis;
+}
+  
+@media screen and (max-width: 510px){
+    .cards__info {
+      padding-bottom: 31px;
+    }
+}

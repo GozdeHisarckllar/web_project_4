@@ -1,0 +1,30 @@
+.profile__button_type_add {
+    max-width: 150px;
+    width: 100%;
+    min-width: 60px;
+    height: 50px;
+    border: 2px solid #FFFFFF;
+    box-sizing: border-box;
+    background-image: url('../../../../images/vector-plus.svg');
+    background-size: 22px;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-position: center;
+    border-radius: 2px;
+    margin: 0 0 0 18%;
+    align-self: center;
+}
+
+
+@media screen and (max-width: 768px){
+  .profile__button_type_add {
+    margin: 0 0 0 8%;
+  }
+}
+
+@media screen and (max-width: 510px){
+  .profile__button_type_add {
+    max-width: 100%;
+    margin: 36px 0 0;
+  }
+}

@@ -1,0 +1,23 @@
+.form-profile__close-icon {
+    position: absolute;
+    top: -35px;
+    right: -35px;
+    width: 40px;
+    height: 40px;
+    background-image: url('../../../images/vector-plus.svg');
+    background-size: cover;
+    background-color: transparent;
+    transform: rotate(-45deg);
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 510px){
+  .form-profile__close-icon {
+    width: 26px;
+    height: 26px;
+    top: -40px;
+    right: -1%;
+  }
+}

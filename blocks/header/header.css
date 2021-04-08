@@ -1,0 +1,27 @@
+@import url('./__vector-logo/header__vector-logo.css');
+
+.header {
+    max-width: calc(100% - 400px);
+    margin: 0 auto;
+    padding: 45px 0 0;
+    border-bottom: 1px solid rgb(84,84,84, .7);
+}
+
+@media screen and (max-width: 1024px){
+  .header {
+    max-width: calc(100% - 200px);
+  }
+}
+
+@media screen and (max-width: 768px){
+  .header {
+    max-width: calc(100% - 100px);
+  }
+}
+
+@media screen and (max-width: 510px){
+  .header {
+    max-width: 100%;
+    padding-top: 28px;
+  }
+}

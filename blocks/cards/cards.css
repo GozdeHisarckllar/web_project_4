@@ -1,0 +1,18 @@
+@import url('./__list/cards__list.css');
+@import url('./__item/cards__item.css');
+@import url('./__image/cards__image.css');
+@import url('./__info/cards__info.css');
+@import url('./__title/cards__title.css');
+@import url('./__heart-icon/cards__heart-icon.css');
+@import url('./__pseudo-icon/cards__pseudo-icon.css');
+
+
+.cards {
+    padding: 50px 0 0 0;
+}
+
+@media screen and (max-width: 510px){
+  .cards {
+    padding-top: 36px;
+  }
+}

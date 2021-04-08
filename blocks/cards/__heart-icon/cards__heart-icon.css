@@ -1,0 +1,15 @@
+.cards__heart-icon {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+}
+
+.cards__heart-icon:checked + .cards__pseudo-icon {
+    background-image: url('../../../images/heart-icon-fill.svg');
+}
+  
+.cards__heart-icon:hover:not(:checked) + .cards__pseudo-icon {
+    opacity: .5;
+}

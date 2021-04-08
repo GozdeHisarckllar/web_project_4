@@ -1,0 +1,12 @@
+.profile__avatar-picture {
+    max-width: 120px;
+    margin: 0 30px 0 0;
+    grid-area: title;
+    border-radius: 50%;
+}
+
+@media screen and (max-width: 510px){
+  .profile__avatar-picture {
+    margin: 0;
+  }
+}

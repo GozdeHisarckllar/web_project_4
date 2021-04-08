@@ -4,9 +4,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./vendor/normalize.css">
-  <link rel="stylesheet" href="./style.css">
-  <link rel="stylesheet" href="./vendor/fonts/fonts.css">
+  <meta name="author" content="Gözde Hisarcıklılar">
+  <link rel="stylesheet" href="./pages/index.css">
   <title>Around the U.S.</title>
 </head>
 <body class="page">
@@ -17,73 +16,72 @@
     <main class="content">
       <section class="profile">
         <img class="profile__avatar-picture" src="./images/cousteau.jpg" alt="profile picture">
-        <div class="profile__info"><!--ul---->
-          <h2 class="profile__title-name">Jacques Cousteau</h2>
+        <div class="profile__info">
+          <h1 class="profile__title-name">Jacques Cousteau</h1>
           <button class="profile__button profile__button_type_edit hover-effect" ></button>
           <p class="profile__subtitle">Explorer</p>
         </div>
         <button class=" profile__button profile__button_type_add hover-effect"></button>
-        <!--button div background image pen plus-->
       </section>
-      <section class="image-cards">
+      <section class="cards">
         <ul class="cards__list">
           <li class="cards__item">
             <img class="cards__image" src="./images/pines-around-the-river.jpg" alt="pines around the river">
             <div class="cards__info">
-              <h3 class="cards__title">Yosemite Valley</h3>
+              <h2 class="cards__title">Yosemite Valley</h2>
               <label>
                 <input class="cards__heart-icon" type="checkbox">
-                <span class="cards__pseudo-icon check-effect"></span>
+                <span class="cards__pseudo-icon"></span>
               </label>
             </div>
           </li>
           <li class="cards__item">
-            <img class="cards__image" src="./images/lake-between-mountains.jpg" alt="a statue expressing the recall">
+            <img class="cards__image" src="./images/lake-between-mountains.jpg" alt="lake between mountains">
             <div class="cards__info">
-              <h3 class="cards__title">Lake Loise</h3>
+              <h2 class="cards__title">Lake Loise</h2>
               <label>
                 <input class="cards__heart-icon" type="checkbox">
-                <span class="cards__pseudo-icon check-effect"></span>
+                <span class="cards__pseudo-icon"></span>
               </label>
             </div>
           </li>
           <li class="cards__item">
-            <img class="cards__image" src="./images/sunset.jpg" alt="people scattered around in a well-designed building depicting interleaving">
+            <img class="cards__image" src="./images/sunset.jpg" alt="sunset">
             <div class="cards__info">
-              <h3 class="cards__title">Bald Mountains</h3>
+              <h2 class="cards__title">Bald Mountains</h2>
               <label>
                 <input class="cards__heart-icon" type="checkbox">
-                <span class="cards__pseudo-icon check-effect"></span>
+                <span class="cards__pseudo-icon"></span>
               </label>
             </div>
           </li>
           <li class="cards__item">
-            <img class="cards__image" src="./images/night-sky.jpg" alt="several windows depicting questions and various ways to think about them">
+            <img class="cards__image" src="./images/night-sky.jpg" alt="night sky in the mountains">
             <div class="cards__info">
-              <h3 class="cards__title">Latemar</h3>
+              <h2 class="cards__title">Latemar</h2>
               <label>
                 <input class="cards__heart-icon" type="checkbox">
-                <span class="cards__pseudo-icon check-effect"></span>
+                <span class="cards__pseudo-icon"></span>
               </label>
             </div>
           </li>
           <li class="cards__item">
-            <img class="cards__image" src="./images/reflection-on-the-lake.jpg" alt="a stack of books holded by a hand">
+            <img class="cards__image" src="./images/reflection-on-the-lake.jpg" alt="reflection on the lake">
             <div class="cards__info">
-              <h3 class="cards__title">Vanoise Nationa...</h3>
+              <h2 class="cards__title">Vanoise Nationa...</h2>
               <label>
                 <input class="cards__heart-icon" type="checkbox">
-                <span class="cards__pseudo-icon check-effect"></span>
+                <span class="cards__pseudo-icon"></span>
               </label>
             </div>
           </li>
           <li class="cards__item">
-            <img class="cards__image" src="./images/boats.jpg" alt="a stack of books holded by a hand">
+            <img class="cards__image" src="./images/boats.jpg" alt="boats floating on the lake">
             <div class="cards__info">
-              <h3 class="cards__title">Lago di Braies</h3>
+              <h2 class="cards__title">Lago di Braies</h2>
               <label>
                 <input class="cards__heart-icon" type="checkbox">
-                <span class="cards__pseudo-icon check-effect"></span>
+                <span class="cards__pseudo-icon"></span>
               </label>
             </div>
           </li>
@@ -91,7 +89,7 @@
       </section>
       <section class="modal">
         <form action="#" class="form-profile">
-          <button class="form-profile__close-icon hover-effect"></button>
+          <div class="form-profile__close-icon hover-effect"></div>
           <fieldset class="form-profile__input-container">
             <legend class="form-profile__caption">Edit profile</legend>
             <label for="name" class="form-profile__label"></label>
@@ -106,7 +104,7 @@
       <footer class="footer">
         <p class="footer__copyright">© 2020 Around The U.S.</p>
       </footer>
-    <script src="./scripts/index.js"></script>
-  </div>
+    </div>
+   <script src="./scripts/index.js"></script>
 </body>
 </html>
