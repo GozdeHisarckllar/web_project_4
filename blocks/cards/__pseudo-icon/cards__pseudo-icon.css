@@ -2,7 +2,7 @@
     width: 22px;
     height: 20px;
     display: inline-block;
-    vertical-align: middle; 
+    vertical-align: middle;
     background-image: url('../../../images/heart-icon.svg');
     background-size: cover;
     cursor: pointer;
