@@ -8,7 +8,10 @@ let subtitleInput = document.querySelector('.form-profile__item_el_subtitle');
 let profileName = document.querySelector('.profile__title-name');
 let profileSubtitle = document.querySelector('.profile__subtitle');
 
-console.log(editButton);
+function toggleModal() {
+    modal.classList.toggle('modal_opened');
+}
+
 formElement.addEventListener('submit', function(event) {
     event.preventDefault();
     
@@ -18,10 +21,6 @@ formElement.addEventListener('submit', function(event) {
     toggleModal();
    }
 );
-
-function toggleModal() {
-    modal.classList.toggle('modal_opened');
-}
 
 editButton.addEventListener('click', toggleModal);
 
