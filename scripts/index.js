@@ -8,6 +8,9 @@ let subtitleInput = document.querySelector('.form-profile__item_el_subtitle');
 let profileName = document.querySelector('.profile__title-name');
 let profileSubtitle = document.querySelector('.profile__subtitle');
 
+nameInput.value = profileName.textContent;
+subtitleInput.value = profileSubtitle.textContent;
+
 function toggleModal() {
     modal.classList.toggle('modal_opened');
 }
