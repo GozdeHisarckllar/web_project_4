@@ -8,12 +8,6 @@ let subtitleInput = document.querySelector('.form-profile__item_el_subtitle');
 let profileName = document.querySelector('.profile__title-name');
 let profileSubtitle = document.querySelector('.profile__subtitle');
 
-nameInput.value = profileName.textContent;
-subtitleInput.value = profileSubtitle.textContent;
-
-function toggleModal() {
-    modal.classList.toggle('modal_opened');
-}
 
 formElement.addEventListener('submit', function(event) {
     event.preventDefault();
@@ -25,6 +19,14 @@ formElement.addEventListener('submit', function(event) {
    }
 );
 
-editButton.addEventListener('click', toggleModal);
+function toggleModal() {
+    modal.classList.toggle('modal_opened');
+}
+
+editButton.addEventListener('click', function(){
+    nameInput.value = profileName.textContent;
+    subtitleInput.value = profileSubtitle.textContent;
+    toggleModal();
+});
 
 closeButton.addEventListener('click', toggleModal);
