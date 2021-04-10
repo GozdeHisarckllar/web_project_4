@@ -1,4 +1,4 @@
-.form-profile__close-icon {
+.form-profile__close-btn {
     position: absolute;
     top: -35px;
     right: -35px;
@@ -13,8 +13,8 @@
     cursor: pointer;
 }
 
-@media screen and (max-width: 510px){
-  .form-profile__close-icon {
+@media screen and (max-width: 613px){
+  .form-profile__close-btn {
     width: 26px;
     height: 26px;
     top: -40px;

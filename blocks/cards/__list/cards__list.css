@@ -3,25 +3,20 @@
     display: grid;
     margin: 0 auto;
     padding: 0;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(282px, 1fr));
     column-gap: 17px;
     row-gap: 20px;
 }
 
 
-@media screen and (max-width: 680px){
+@media screen and (max-width: 850px){
   .cards__list {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr);
     column-gap: 12px;
   }
 }
 
-@media screen and (max-width: 510px){
+@media screen and (max-width: 600px){/*500*/
   .cards__list {
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(6, 1fr);
     column-gap: 0;
   }
 }

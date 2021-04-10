@@ -1,24 +1,15 @@
 @import url('./__input-container/form-profile__input-container.css');
 @import url('./__caption/form-profile__caption.css');
-@import url('./__label/form-profile__label.css');
 @import url('./__item/form-profile__item.css');
 @import url('./__item/_el/form-profile__item_el_name.css');
 @import url('./__item/_el/form-profile__item_el_subtitle.css');
-@import url('./__close-icon/form-profile__close-icon.css');
+@import url('./__close-btn/form-profile__close-btn.css');
 @import url('./__button/form-profile__button.css');
 
 
 .form-profile {
-    position: relative;
-    max-width: 430px;
     width: 100%;
     background: #FFFFFF;
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
     border-radius: 10px;
-}
-
-@media screen and (max-width: 510px){
-  .form-profile {
-    max-width: 282px;
-  }
 }

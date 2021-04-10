@@ -3,20 +3,28 @@
     margin: 0 auto;
   }
   
+
+  @media screen and (max-width: 1280px){
+    .content {
+      max-width: calc(100% - 250px);
+    }
+  }
+
   @media screen and (max-width: 1024px){
     .content {
-      max-width: calc(100% - 200px);
+      max-width: calc(100% - 184px);
     }
   }
   
   @media screen and (max-width: 768px){
     .content {
-      max-width: calc(100% - 100px);
+      max-width: calc(100% - 80px);
     }
   }
   
-  @media screen and (max-width: 510px){
+  @media screen and (max-width: 675px){
     .content {
       max-width: calc(100% - 38px);
     }
   }
+  

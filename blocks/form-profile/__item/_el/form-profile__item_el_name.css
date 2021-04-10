@@ -1,9 +1,0 @@
-.form-profile__item_el_name {
-    margin-top: 40px;
-}
-  
-@media screen and (max-width: 510px){
-    .form-profile__item_el_name {
-      margin-top: 67px;
-    }
-}

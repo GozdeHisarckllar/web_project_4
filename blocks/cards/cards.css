@@ -3,15 +3,15 @@
 @import url('./__image/cards__image.css');
 @import url('./__info/cards__info.css');
 @import url('./__title/cards__title.css');
-@import url('./__heart-icon/cards__heart-icon.css');
-@import url('./__pseudo-icon/cards__pseudo-icon.css');
+@import url('./__heart-btn/cards__heart-btn.css');
+@import url('./__heart-btn/_active/cards__heart-btn_active.css');
 
 
 .cards {
     padding: 50px 0 0 0;
 }
 
-@media screen and (max-width: 510px){
+@media screen and (max-width: 613px){
   .cards {
     padding-top: 36px;
   }
