@@ -6,22 +6,28 @@
     padding: 68px 0 60px;
 }
 
-@media screen and (max-width: 1280px){
+@media screen and (max-width: 1279px){
   .footer {
     max-width: calc(100% - 250px);
   }
 }
 
+@media screen and (max-width: 1144px){
+  .footer {
+    max-width: calc(100% - 200px);
+  }
+}
+
 @media screen and (max-width: 1024px){
-    .footer {
-      max-width: calc(100% - 184px);
-    }
+  .footer {
+    max-width: calc(100% - 184px);
+  }
 }
   
 @media screen and (max-width: 768px){
-    .footer {
-      max-width: calc(100% - 80px);
-    }
+  .footer {
+    max-width: calc(100% - 80px);
+  }
 }
 
 @media screen and (max-width: 675px){

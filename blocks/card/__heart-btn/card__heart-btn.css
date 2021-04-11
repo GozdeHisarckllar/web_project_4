@@ -1,4 +1,4 @@
-.cards__heart-btn {
+.card__heart-btn {
     width: 22px;
     height: 20px;
     display: inline-block;
@@ -10,4 +10,3 @@
     cursor: pointer;
     opacity: 1;
 }
-

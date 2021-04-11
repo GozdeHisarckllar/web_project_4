@@ -1,4 +1,4 @@
-.form-profile__close-btn {
+.modal__close-btn {
     position: absolute;
     top: -35px;
     right: -35px;
@@ -14,7 +14,7 @@
 }
 
 @media screen and (max-width: 613px){
-  .form-profile__close-btn {
+  .modal__close-btn {
     width: 26px;
     height: 26px;
     top: -40px;

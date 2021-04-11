@@ -15,7 +15,7 @@
   }
 }
 
-@media screen and (max-width: 600px){/*500*/
+@media screen and (max-width: 600px){
   .cards__list {
     column-gap: 0;
   }

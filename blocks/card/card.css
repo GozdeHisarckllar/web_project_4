@@ -1,0 +1,17 @@
+@import url('./__image/card__image.css');
+@import url('./__info/card__info.css');
+@import url('./__heart-btn/card__heart-btn.css');
+@import url('./__heart-btn/_active/card__heart-btn_active.css');
+@import url('./__title/card__title.css');
+
+.card {
+    display: flex;
+    max-width: 100%;
+    min-height: 361px;
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
+    list-style: none;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+}

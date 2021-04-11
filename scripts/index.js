@@ -1,23 +1,14 @@
 let modal = document.querySelector('.modal');
 let formElement = document.querySelector('.form-profile');
 let editButton = document.querySelector('.profile__button_type_edit');
-let closeButton = document.querySelector('.form-profile__close-btn');
+let closeButton = document.querySelector('.modal__close-btn');
 
 let nameInput = document.querySelector('.form-profile__item_el_name');
 let subtitleInput = document.querySelector('.form-profile__item_el_subtitle');
 let profileName = document.querySelector('.profile__title-name');
 let profileSubtitle = document.querySelector('.profile__subtitle');
 
-let heartButton = document.querySelectorAll('.cards__heart-btn');
-
-
-for (let i = 0; i < heartButton.length; i++) {
-    heartButton[i].addEventListener('click', function() {
-        heartButton[i].classList.toggle("cards__heart-btn_active");
-        heartButton[i].classList.toggle('like-hover');
-    }
-  );
-}
+let heartButton = document.querySelectorAll('.card__heart-btn');
 
 function formSubmit(event) {
     event.preventDefault();
@@ -28,14 +19,23 @@ function formSubmit(event) {
     toggleModal();
 }
 
-function toggleModal() {
-    modal.classList.toggle('modal_opened');
-}
-
 function filledInputOpened() {
     nameInput.value = profileName.textContent;
     subtitleInput.value = profileSubtitle.textContent;
     toggleModal();
+}
+
+function toggleModal() {
+    modal.classList.toggle('modal_opened');
+}
+
+function toggleLikeActive(event) {
+    event.target.classList.toggle("card__heart-btn_active");
+    event.target.classList.toggle('like-hover');
+}
+
+for (let i = 0; i < heartButton.length; i++) {
+    heartButton[i].addEventListener('click', toggleLikeActive);
 }
 
 formElement.addEventListener('submit', formSubmit);
