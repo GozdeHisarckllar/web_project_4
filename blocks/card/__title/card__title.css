@@ -9,3 +9,9 @@
     overflow: hidden;
     max-width: 215px;
 }
+
+@media screen and (max-width: 613px){
+    .card__title {
+      max-width: 262px;
+    }
+  }
