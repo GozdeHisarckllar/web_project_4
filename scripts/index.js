@@ -8,8 +8,6 @@ let subtitleInput = document.querySelector('.form-profile__item_el_subtitle');
 let profileName = document.querySelector('.profile__title-name');
 let profileSubtitle = document.querySelector('.profile__subtitle');
 
-let heartButtons = document.querySelectorAll('.card__heart-btn');
-
 function formSubmit(event) {
     event.preventDefault();
     
@@ -27,15 +25,6 @@ function filledInputOpened() {
 
 function toggleModal() {
     modal.classList.toggle('modal_opened');
-}
-
-function toggleLikeActive(event) {
-    event.target.classList.toggle("card__heart-btn_active");
-    event.target.classList.toggle('like-hover');
-}
-
-for (let i = 0; i < heartButtons.length; i++) {
-    heartButtons[i].addEventListener('click', toggleLikeActive);
 }
 
 formElement.addEventListener('submit', formSubmit);
