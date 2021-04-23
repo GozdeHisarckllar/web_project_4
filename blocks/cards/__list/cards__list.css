@@ -3,20 +3,20 @@
     display: grid;
     margin: 0 auto;
     padding: 0;
-    grid-template-columns: repeat(auto-fit, minmax(282px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));/*282*/
     column-gap: 17px;
     row-gap: 20px;
 }
 
 
-@media screen and (max-width: 850px){
+/*@media screen and (max-width: 850px){
   .cards__list {
     column-gap: 12px;
   }
-}
+}*/
 
-@media screen and (max-width: 600px){
+/*@media screen and (max-width: 600px){
   .cards__list {
     column-gap: 0;
   }
-}
+}*/

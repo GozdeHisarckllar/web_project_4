@@ -1,11 +1,13 @@
 @import url('./__image/card__image.css');
 @import url('./__info/card__info.css');
-@import url('./__heart-btn/card__heart-btn.css');
-@import url('./__heart-btn/_active/card__heart-btn_active.css');
+@import url('./__like-btn/card__like-btn.css');
+@import url('./__like-btn/_active/card__like-btn_active.css');
 @import url('./__title/card__title.css');
+@import url('./__remove-btn/card__remove-btn.css');
 
 .card {
     display: flex;
+    position: relative;
     max-width: 100%;
     min-height: 361px;
     margin: 0;

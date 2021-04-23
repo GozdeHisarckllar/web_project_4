@@ -3,7 +3,7 @@
     margin: 0 0 41px;
 }
 
-@media screen and (max-width: 613px){
+@media screen and (max-width: 604px){
   .header__vector-logo {
     max-width: 126px;
     margin: 0 0 32px 27px;

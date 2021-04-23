@@ -1,4 +1,3 @@
-.card__heart-btn_active {
-    transition: all .4s ease-in-out;
+.card__like-btn_active {
     background-image: url('../../../../images/heart-icon-fill.svg');
 }
