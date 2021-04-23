@@ -25,57 +25,16 @@
       </section>
       <section class="cards">
         <ul class="cards__list">
-          <li class="card">
-            <img class="card__image" src="./images/pines-around-the-river.jpg" alt="pines around the river">
-            <div class="card__info">
-              <h2 class="card__title">Yosemite Valley</h2>
-              <button class="card__heart-btn like-hover" aria-label="Like" type="button"></button>
-            </div>
-          </li>
-          <li class="card">
-            <img class="card__image" src="./images/lake-between-mountains.jpg" alt="lake between mountains">
-            <div class="card__info">
-              <h2 class="card__title">Lake Loise</h2>
-              <button class="card__heart-btn like-hover" aria-label="Like" type="button"></button>
-            </div>
-          </li>
-          <li class="card">
-            <img class="card__image" src="./images/sunset.jpg" alt="sunset">
-            <div class="card__info">
-              <h2 class="card__title">Bald Mountains</h2>
-              <button class="card__heart-btn like-hover" aria-label="Like" type="button"></button>
-            </div>
-          </li>
-          <li class="card">
-            <img class="card__image" src="./images/night-sky.jpg" alt="night sky in the mountains">
-            <div class="card__info">
-              <h2 class="card__title">Latemar</h2>
-              <button class="card__heart-btn like-hover" aria-label="Like" type="button"></button>
-            </div>
-          </li>
-          <li class="card">
-            <img class="card__image" src="./images/reflection-on-the-lake.jpg" alt="reflection on the lake">
-            <div class="card__info">
-              <h2 class="card__title">Vanoise National Park</h2>
-              <button class="card__heart-btn like-hover" aria-label="Like" type="button"></button>
-            </div>
-          </li>
-          <li class="card">
-            <img class="card__image" src="./images/boats.jpg" alt="boats floating on the lake">
-            <div class="card__info">
-              <h2 class="card__title">Lago di Braies</h2>
-              <button class="card__heart-btn like-hover" aria-label="Like" type="button"></button>
-            </div>
-          </li>
+          
         </ul>
       </section>
       </main>
       <footer class="footer">
-        <p class="footer__copyright">© 2020 Around The U.S.</p>
+        <p class="footer__copyright">© 2021 Around The U.S.</p>
       </footer>
-      <div class="modal">
+      <div class="modal modal_type_edit-profile">
        <div class="modal__container">
-        <form action="#" class="form-profile" name="profileForm">
+        <form action="#" class="form-profile form-profile_type_profile-info" name="profileForm">
           <fieldset class="form-profile__input-container">
             <legend class="form-profile__caption">Edit profile</legend>
             <input type="text" class="form-profile__item form-profile__item_el_name" id="name" name="name" placeholder="Name" required>
@@ -86,7 +45,39 @@
         <button class="modal__close-btn hover-effect" aria-label="Close" type="button"></button>
        </div>
       </div>
+      <div class="modal modal_type_add-card">
+        <div class="modal__container">
+         <form action="#" class="form-profile form-profile_type_new-card-info" name="profileForm">
+           <fieldset class="form-profile__input-container">
+             <legend class="form-profile__caption">New place</legend>
+             <input type="text" class="form-profile__item form-profile__item_el_card-title" id="card-title" name="card-title" placeholder="Title" required>
+             <input type="url" class="form-profile__item form-profile__item_el_card-link" id="card-link" name="card-link" placeholder="Image Link" required>
+             <button type="submit" class="form-profile__button">Create</button>
+           </fieldset>
+         </form>
+         <button class="modal__close-btn hover-effect" aria-label="Close" type="button"></button>
+        </div>
+       </div>
+       <div class="modal modal_type_image-detail">
+        <div class="modal__container modal__container_size_fit">
+         <figure class="modal__figure">
+           <img class="modal__image" src="" alt="">
+           <figcaption class="modal__image-caption"></figcaption>
+           <button class="modal__close-btn hover-effect" aria-label="Close" type="button"></button>
+         </figure>
+        </div>
+       </div>
     </div>
+    <template id="card-template">
+      <li class="card">
+        <button class="card__remove-btn hover-effect" aria-label="Remove" type="button"></button>
+        <div class="card__image"></div>
+        <div class="card__info">
+          <h2 class="card__title"></h2>
+          <button class="card__like-btn like-hover" aria-label="Like" type="button"></button>
+        </div>
+      </li>
+    </template>
    <script src="./scripts/index.js"></script>
 </body>
 </html>

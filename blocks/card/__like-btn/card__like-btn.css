@@ -1,4 +1,4 @@
-.card__heart-btn {
+.card__like-btn {
     width: 22px;
     height: 20px;
     display: inline-block;
@@ -10,4 +10,5 @@
     outline: none;
     cursor: pointer;
     opacity: 1;
+    transition: all .4s ease-in-out;
 }

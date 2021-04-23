@@ -10,7 +10,7 @@
     max-width: 215px;
 }
 
-@media screen and (max-width: 613px){
+@media screen and (max-width: 604px){/*613*/
     .card__title {
       max-width: 262px;
     }

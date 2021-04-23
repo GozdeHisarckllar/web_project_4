@@ -9,7 +9,7 @@
     box-sizing: border-box;
 }
 
-@media screen and (max-width: 613px){
+@media screen and (max-width: 604px){
   .form-profile__input-container {
     max-width: calc(100% - 44px);
     margin-top: 25px;
