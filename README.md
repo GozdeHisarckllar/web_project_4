@@ -8,7 +8,7 @@
 
 **Intro**
 
-* A front-end project for the [Practicum by Yandex](https://practicum.yandex.com/) curriculum.
+* A front-end project for the [Practicum by Yandex](https://practicum.yandex.com) curriculum.
 
 * An interactive page/frond-end code for the photo app which enables a user to add or remove customized photo cards, view and like photos about various travel destinations.
 
