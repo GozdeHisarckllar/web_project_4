@@ -1,22 +1,6 @@
 .card__image {
-    /*display: block;
-    max-width: 100%;
-    height: 282px;
-    /*max-height: fit-content;
-    min-height: 260px;*/
     border-radius: 10px 10px 0px 0px;
-    /*object-fit: cover;*/
-    /*background-image: url(https://code.s3.yandex.net/web-code/lago.jpg);*/
     background-size: cover;
     background-position: center;
     padding-bottom: 100%;
 }
-
-/*img min height: 282px-----
-max-height: 361px;*/
-
-/*height: 282px  del min-height*/
-
-/*max-height: 282px---
-height: 100% */
-
