@@ -71,8 +71,23 @@ enableValidation({
     submitButtonSelector: ".form-profile__button",
     inactiveButtonClass: "form-profile__button_disabled",
     inputErrorClass: "form-profile__item_type_error",
-    errorClass: "form-profile__item-error_visible"
-  }); 
+    errorClass: "form-profile__input-error_visible"
+  });
 
-  //add style to class css "form-profile__item_type_error" and "form-profile__error_visible"
-  //form-profile__button_disabled
+function resetValidation(modalType) {
+  let formElement = modalType.querySelector(".form-profile");
+  const errorList = Array.from(formElement.querySelectorAll(".form-profile__input-error"));
+  const inputList = Array.from(formElement.querySelectorAll(".form-profile__item"));
+  let submitButton = modalType.querySelector(".form-profile__button");
+  errorList.forEach((errorElement) => {
+    errorElement.classList.remove("form-profile__input-error_visible");
+      errorElement.textContent = "";
+  });
+  inputList.forEach((inputElement) => {
+    inputElement.classList.remove("form-profile__item_type_error");
+  });
+  submitButton.setAttribute("disabled", true);
+  submitButton.classList.add("form-profile__button_disabled");
+  }
+
+  export { resetValidation };

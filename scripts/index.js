@@ -33,12 +33,15 @@ function openFilledForm() {
     nameInput.value = profileName.textContent;
     subtitleInput.value = profileSubtitle.textContent;
     openModal(editProfileModal);
+    const buttonElement = editProfileModal.querySelector(".form-profile__button");
+    buttonElement.removeAttribute("disabled");
+    buttonElement.classList.remove("form-profile__button_disabled");
 }
 
 /*function toggleModal(modalType) {
     modalType.classList.toggle('modal_opened');
 }*/
-
+import { resetValidation } from './validate.js';
 function handleEscCloseKey(evt) {
   evt.preventDefault();
 
@@ -63,8 +66,15 @@ function openModal(modalType) {
 
 function closeModal(modalType) {
   modalType.classList.remove('modal_opened');
-  document.removeEventListener("keyup", handleEscCloseKey);
-  modalType.removeEventListener("click", handleMouseClose);
+  document.removeEventListener("keyup", () => {
+    handleEscCloseKey();
+    resetValidation(modalType);
+  });
+  modalType.removeEventListener("click", () => {
+    handleMouseClose();
+    resetValidation(modalType);
+  });
+  resetValidation(modalType);
 }
 
 formProfileElement.addEventListener('submit', submitForm);
@@ -77,10 +87,13 @@ editProfileCloseButton.addEventListener('click', () => {
 
 addCardButton.addEventListener('click', () => {
   openModal(addCardModal);
+  /*const submitButton = addCardModal.querySelector(".form-profile__button");
+  submitButton.disabled = true;*/
 });
 
 addCardCloseButton.addEventListener('click', () => {
   closeModal(addCardModal);
+  formNewCardElement.reset();
 });
 
 imageDetailCloseButton.addEventListener('click', () => {
@@ -201,7 +214,6 @@ formNewCardElement.addEventListener('submit', (event) => {
   closeModal(addCardModal);
   addNewCard(event);
 });
-
 /*function like(evt){
   evt.target.classList.toogle();
 }

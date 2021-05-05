@@ -38,12 +38,12 @@
           <fieldset class="form-profile__input-container">
             <legend class="form-profile__caption">Edit profile</legend>
             <label class="form-profile__label">
-              <input type="text" class="form-profile__item form-profile__item_el_name" id="name-input" name="name" placeholder="Name" required>
-              <span class="form-profile__item-error name-input-error"></span>
+              <input type="text" class="form-profile__item form-profile__item_el_name" id="name-input" name="name" placeholder="Name" minlength="2" maxlength="40" required>
+              <span class="form-profile__input-error name-input-error"></span>
             </label>
             <label class="form-profile__label">
-              <input type="text" class="form-profile__item form-profile__item_el_subtitle" id="subtitle-input" name="subtitle" placeholder="About me" required>
-              <span class="form-profile__item-error subtitle-input-error"></span>
+              <input type="text" class="form-profile__item form-profile__item_el_subtitle" id="subtitle-input" name="subtitle" placeholder="About me" minlength="2" maxlength="200" required>
+              <span class="form-profile__input-error subtitle-input-error"></span>
             </label>
             <button type="submit" class="form-profile__button">Save</button>
           </fieldset>
@@ -57,12 +57,12 @@
            <fieldset class="form-profile__input-container">
              <legend class="form-profile__caption">New place</legend>
              <label class="form-profile__label">
-                <input type="text" class="form-profile__item form-profile__item_el_card-title" id="card-title-input" name="card-title" placeholder="Title" required>
-                <span class="form-profile__item-error card-title-input-error"></span>
+                <input type="text" class="form-profile__item form-profile__item_el_card-title" id="card-title-input" name="card-title" placeholder="Title" maxlength="30" required>
+                <span class="form-profile__input-error card-title-input-error"></span>
              </label>
              <label class="form-profile__label">
                 <input type="url" class="form-profile__item form-profile__item_el_card-link" id="card-link-input" name="card-link" placeholder="Image Link" required>
-                <span class="form-profile__item-error card-link-input-error"></span>
+                <span class="form-profile__input-error card-link-input-error"></span>
              </label>
              <button type="submit" class="form-profile__button">Create</button>
            </fieldset>
@@ -90,7 +90,7 @@
         </div>
       </li>
     </template>
-   <script src="./scripts/index.js"></script>
-   <script src="./scripts/validate.js"></script>
+    <script type="module" src="./scripts/index.js"></script>
+   <script type="module" src="./scripts/validate.js"></script>
 </body>
 </html>
