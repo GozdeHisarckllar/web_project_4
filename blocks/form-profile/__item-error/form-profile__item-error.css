@@ -1,0 +1,11 @@
+.form_profile__item-error {
+    display: inline-block;
+    position: absolute;
+    top: calc(100% + 9px);
+    left: 0;
+    font-size: 12px;
+    line-height: 1.25;
+    color: #FF0000;
+    opacity: 1;
+    transition: .1s;
+}

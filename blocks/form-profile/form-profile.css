@@ -1,9 +1,14 @@
 @import url('./__input-container/form-profile__input-container.css');
 @import url('./__caption/form-profile__caption.css');
 @import url('./__item/form-profile__item.css');
+@import url('./__item-error/form-profile__item-error.css');
+@import url('./__item-error/_visible/form-profile__item-error_visible.css');
 @import url('./__item/_el/form-profile__item_el_name.css');
 @import url('./__item/_el/form-profile__item_el_subtitle.css');
 @import url('./__button/form-profile__button.css');
+@import url('./__button/_disabled/form-profile__button_disabled.css');
+@import url('./__item/_type/form-profile__item_type_error.css');
+@import url('./__label/form-profile__label.css');
 
 
 .form-profile {

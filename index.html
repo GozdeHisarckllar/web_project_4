@@ -37,8 +37,14 @@
         <form action="#" class="form-profile form-profile_type_profile-info" name="profileForm">
           <fieldset class="form-profile__input-container">
             <legend class="form-profile__caption">Edit profile</legend>
-            <input type="text" class="form-profile__item form-profile__item_el_name" id="name" name="name" placeholder="Name" required>
-            <input type="text" class="form-profile__item form-profile__item_el_subtitle" id="subtitle" name="subtitle" placeholder="About me" required>
+            <label class="form-profile__label">
+              <input type="text" class="form-profile__item form-profile__item_el_name" id="name-input" name="name" placeholder="Name" required>
+              <span class="form-profile__item-error name-input-error"></span>
+            </label>
+            <label class="form-profile__label">
+              <input type="text" class="form-profile__item form-profile__item_el_subtitle" id="subtitle-input" name="subtitle" placeholder="About me" required>
+              <span class="form-profile__item-error subtitle-input-error"></span>
+            </label>
             <button type="submit" class="form-profile__button">Save</button>
           </fieldset>
         </form>
@@ -50,8 +56,14 @@
          <form action="#" class="form-profile form-profile_type_new-card-info" name="profileForm">
            <fieldset class="form-profile__input-container">
              <legend class="form-profile__caption">New place</legend>
-             <input type="text" class="form-profile__item form-profile__item_el_card-title" id="card-title" name="card-title" placeholder="Title" required>
-             <input type="url" class="form-profile__item form-profile__item_el_card-link" id="card-link" name="card-link" placeholder="Image Link" required>
+             <label class="form-profile__label">
+                <input type="text" class="form-profile__item form-profile__item_el_card-title" id="card-title-input" name="card-title" placeholder="Title" required>
+                <span class="form-profile__item-error card-title-input-error"></span>
+             </label>
+             <label class="form-profile__label">
+                <input type="url" class="form-profile__item form-profile__item_el_card-link" id="card-link-input" name="card-link" placeholder="Image Link" required>
+                <span class="form-profile__item-error card-link-input-error"></span>
+             </label>
              <button type="submit" class="form-profile__button">Create</button>
            </fieldset>
          </form>
@@ -79,5 +91,6 @@
       </li>
     </template>
    <script src="./scripts/index.js"></script>
+   <script src="./scripts/validate.js"></script>
 </body>
 </html>

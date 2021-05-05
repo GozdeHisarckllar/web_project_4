@@ -16,7 +16,7 @@
     transition: all .2s ease-in-out;
 }
 
-.form-profile__button:hover {
+.form-profile__button:hover:not([disabled]) {
     opacity: .8;
 }
 
