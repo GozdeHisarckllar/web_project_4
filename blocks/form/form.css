@@ -1,0 +1,19 @@
+@import url('./__input-container/form__input-container.css');
+@import url('./__caption/form__caption.css');
+@import url('./__item/form__item.css');
+@import url('./__input-error/form__input-error.css');
+@import url('./__input-error/_visible/form__input-error_visible.css');
+@import url('./__item/_el/form__item_el_name.css');
+@import url('./__item/_el/form__item_el_subtitle.css');
+@import url('./__button/form__button.css');
+@import url('./__button/_disabled/form__button_disabled.css');
+@import url('./__item/_type/form__item_type_error.css');
+@import url('./__label/form__label.css');
+
+
+.form {
+    width: 100%;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+}

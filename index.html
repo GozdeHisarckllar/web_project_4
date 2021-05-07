@@ -34,18 +34,18 @@
       </footer>
       <div class="modal modal_type_edit-profile">
        <div class="modal__container">
-        <form action="#" class="form-profile form-profile_type_profile-info" name="profileForm">
-          <fieldset class="form-profile__input-container">
-            <legend class="form-profile__caption">Edit profile</legend>
-            <label class="form-profile__label">
-              <input type="text" class="form-profile__item form-profile__item_el_name" id="name-input" name="name" placeholder="Name" minlength="2" maxlength="40" required>
-              <span class="form-profile__input-error name-input-error"></span>
+        <form action="#" class="form form_type_profile-info" name="profileForm">
+          <fieldset class="form__input-container">
+            <legend class="form__caption">Edit profile</legend>
+            <label class="form__label">
+              <input type="text" class="form__item form__item_el_name" id="name-input" name="name" placeholder="Name" minlength="2" maxlength="40" required>
+              <span class="form__input-error name-input-error"></span>
             </label>
-            <label class="form-profile__label">
-              <input type="text" class="form-profile__item form-profile__item_el_subtitle" id="subtitle-input" name="subtitle" placeholder="About me" minlength="2" maxlength="200" required>
-              <span class="form-profile__input-error subtitle-input-error"></span>
+            <label class="form__label">
+              <input type="text" class="form__item form__item_el_subtitle" id="subtitle-input" name="subtitle" placeholder="About me" minlength="2" maxlength="200" required>
+              <span class="form__input-error subtitle-input-error"></span>
             </label>
-            <button type="submit" class="form-profile__button">Save</button>
+            <button type="submit" class="form__button">Save</button>
           </fieldset>
         </form>
         <button class="modal__close-btn hover-effect" aria-label="Close" type="button"></button>
@@ -53,18 +53,18 @@
       </div>
       <div class="modal modal_type_add-card">
         <div class="modal__container">
-         <form action="#" class="form-profile form-profile_type_new-card-info" name="profileForm">
-           <fieldset class="form-profile__input-container">
-             <legend class="form-profile__caption">New place</legend>
-             <label class="form-profile__label">
-                <input type="text" class="form-profile__item form-profile__item_el_card-title" id="card-title-input" name="card-title" placeholder="Title" maxlength="30" required>
-                <span class="form-profile__input-error card-title-input-error"></span>
+         <form action="#" class="form form_type_new-card-info" name="profileForm">
+           <fieldset class="form__input-container">
+             <legend class="form__caption">New place</legend>
+             <label class="form__label">
+                <input type="text" class="form__item form__item_el_card-title" id="card-title-input" name="card-title" placeholder="Title" maxlength="30" required>
+                <span class="form__input-error card-title-input-error"></span>
              </label>
-             <label class="form-profile__label">
-                <input type="url" class="form-profile__item form-profile__item_el_card-link" id="card-link-input" name="card-link" placeholder="Image URL" required>
-                <span class="form-profile__input-error card-link-input-error"></span>
+             <label class="form__label">
+                <input type="url" class="form__item form__item_el_card-link" id="card-link-input" name="card-link" placeholder="Image URL" required>
+                <span class="form__input-error card-link-input-error"></span>
              </label>
-             <button type="submit" class="form-profile__button">Create</button>
+             <button type="submit" class="form__button">Create</button>
            </fieldset>
          </form>
          <button class="modal__close-btn hover-effect" aria-label="Close" type="button"></button>
@@ -90,6 +90,7 @@
         </div>
       </li>
     </template>
+  <script src="./scripts/data.js"></script>
   <script src="./scripts/index.js"></script>
   <script src="./scripts/validate.js"></script>
 </body>

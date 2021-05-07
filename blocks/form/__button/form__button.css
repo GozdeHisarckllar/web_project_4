@@ -1,4 +1,4 @@
-.form-profile__button {
+.form__button {
     width: 100%;
     margin: 48px auto 36px;
     padding: 14px 0 18px;
@@ -16,12 +16,12 @@
     transition: all .2s ease-in-out;
 }
 
-.form-profile__button:hover:not([disabled]) {
+.form__button:hover:not([disabled]) {
     opacity: .8;
 }
 
 @media screen and (max-width: 604px){
-    .form-profile__button {
+    .form__button {
       font-size: 14px;
       line-height: 1.21;
       margin-top: 46px;

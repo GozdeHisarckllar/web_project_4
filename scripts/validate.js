@@ -1,3 +1,13 @@
+const settings = {  
+  formSelector: ".form",
+  inputSelector: ".form__item",
+  submitButtonSelector: ".form__button",
+  inactiveButtonClass: "form__button_disabled",
+  inputErrorClass: "form__item_type_error",
+  errorClass: "form__input-error_visible",
+  errorMessageSelector: ".form__input-error"
+}
+
 function showInputError(settings, formElement, inputElement, errorMessage) {
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
     
@@ -30,13 +40,21 @@ function hasInvalidInput(inputList) {
   });
 }
 
+function enableSubmitButton(settings, buttonElement) {
+  buttonElement.classList.remove(settings.inactiveButtonClass);
+  buttonElement.removeAttribute("disabled");
+}
+
+function disableSubmitButton(settings, buttonElement) {
+  buttonElement.classList.add(settings.inactiveButtonClass);
+  buttonElement.setAttribute("disabled", true);
+}
+
 function toggleButtonState(settings, inputList, buttonElement) {
   if (hasInvalidInput(inputList)) {
-    buttonElement.classList.add(settings.inactiveButtonClass);
-    buttonElement.setAttribute("disabled", true);
+    disableSubmitButton(settings, buttonElement);
   } else {
-    buttonElement.classList.remove(settings.inactiveButtonClass);
-    buttonElement.removeAttribute("disabled");
+    enableSubmitButton(settings, buttonElement);
   }
 }
 
@@ -66,11 +84,24 @@ function enableValidation(settings) {
   })
 }
 
-enableValidation({
-  formSelector: ".form-profile",
-  inputSelector: ".form-profile__item",
-  submitButtonSelector: ".form-profile__button",
-  inactiveButtonClass: "form-profile__button_disabled",
-  inputErrorClass: "form-profile__item_type_error",
-  errorClass: "form-profile__input-error_visible",
-});
+enableValidation(settings);
+
+
+function resetValidation(settings, modalType) {
+  const formElement = modalType.querySelector(settings.formSelector);
+  const errorList = Array.from(formElement.querySelectorAll(settings.errorMessageSelector));
+  const inputList = Array.from(formElement.querySelectorAll(settings.inputSelector));
+  const submitButton = modalType.querySelector(settings.submitButtonSelector);
+
+  errorList.forEach((errorElement) => {
+    errorElement.classList.remove(settings.errorClass);
+    errorElement.textContent = "";
+  });
+
+  inputList.forEach((inputElement) => {
+    inputElement.classList.remove(settings.inputErrorClass);
+  });
+  
+  formElement.reset();
+  disableSubmitButton(settings, submitButton);
+}
