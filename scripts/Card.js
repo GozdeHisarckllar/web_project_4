@@ -35,12 +35,12 @@ class Card {
     closeModal(imageDetailModal);
   }
   
-  _likeCard() {
-    this._element.querySelector(".card__like-btn").classList.toggle("card__like-btn_active");
+  _toggleLikeButton(evt) {
+    evt.target.classList.toggle("card__like-btn_active");
   }
   
-  _removeCard() {
-    this._element.closest('.card').remove();
+  _removeCard(evt) {
+    evt.target.closest('.card').remove();
   }
   
   _setEventListeners() {
@@ -49,10 +49,10 @@ class Card {
         this._handleOpenImagePreview();
       }
       else if (evt.target.classList.contains("card__remove-btn")) {
-        this._removeCard();
+        this._removeCard(evt);
       }
       else if (evt.target.classList.contains("card__like-btn")) {
-        this._likeCard();
+        this._toggleLikeButton(evt);
       }
     });
 
