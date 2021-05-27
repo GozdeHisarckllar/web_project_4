@@ -1,3 +1,8 @@
+import initialCards from "./data.js";
+import Card from "./Card.js";
+import { settings, resetValidation } from "./resetForm.js";
+import { enableSubmitButton, FormValidator } from "./FormValidator.js";
+
 const editProfileModal = document.querySelector('.modal_type_edit-profile');
 const formProfileElement = document.querySelector('.form_type_profile-info');
 const editButton = document.querySelector('.profile__button_type_edit');
@@ -12,9 +17,6 @@ const cardTitleInput = document.querySelector('.form__item_el_card-title');
 const cardLinkInput = document.querySelector('.form__item_el_card-link');
 
 const imageDetailModal = document.querySelector('.modal_type_image-detail');
-const imageDetailCloseButton = imageDetailModal.querySelector('.modal__close-btn');
-const modalImage = imageDetailModal.querySelector('.modal__image');
-const modalImageCaption = imageDetailModal.querySelector('.modal__image-caption');
 
 const nameInput = document.querySelector('.form__item_el_name');
 const subtitleInput = document.querySelector('.form__item_el_subtitle');
@@ -88,74 +90,40 @@ addCardCloseButton.addEventListener('click', () => {
   closeModal(addCardModal);
 });
 
-imageDetailCloseButton.addEventListener('click', () => {
-  closeModal(imageDetailModal);
-});
 
-
-const cardTemplate = document.querySelector('#card-template').content;
 const cardList = document.querySelector('.cards__list');
 
 
-function openImageDetailPreview(data) {
-    modalImage.src = data.link;
-    modalImage.alt = data.name;
-    modalImageCaption.textContent = data.name;
-      
-    openModal(imageDetailModal);
+function renderCard(cardData, container) {
+  const card = new Card(cardData, "#card-template");
+  const cardElement = card.generateCard();
+
+  container.prepend(cardElement);
 }
 
-function toggleLikeButton(evt) {
-    evt.target.classList.toggle('card__like-btn_active');
-}
-
-function removeCard(evt) {
-    evt.target.closest('.card').remove();
-}
-
-function createCard(data) {
-  const cardElement = cardTemplate.querySelector('.card').cloneNode(true);
-  const cardImage = cardElement.querySelector('.card__image');
-  const cardTitle = cardElement.querySelector('.card__title');
-
-    cardImage.style.backgroundImage = `url(${data.link})`;
-    cardTitle.textContent = data.name;
-
-  cardElement.addEventListener("click", (evt) => {
-    if (evt.target.classList.contains("card__like-btn")) {
-      toggleLikeButton(evt);
-    }
-    else if (evt.target.classList.contains("card__remove-btn")) {
-      removeCard(evt);
-    }
-    else if (evt.target.classList.contains("card__image")) {
-      openImageDetailPreview(data);
-    }
-  });
-
-  return cardElement;
-}
-
-function renderCard(card, container) {
-    container.prepend(card);
-}
-
-initialCards.forEach((data) => {
-  const cardElement = createCard(data);
-
-    renderCard(cardElement, cardList);
+initialCards.forEach((item) => {
+  renderCard(item, cardList);
 });
 
 function addNewCard(evt) {
-    evt.preventDefault();
-    const newCard = {};
-    newCard.name = cardTitleInput.value;
-    newCard.link = cardLinkInput.value;
+  evt.preventDefault();
+  const newCardData = {};
+  newCardData.name = cardTitleInput.value;
+  newCardData.link = cardLinkInput.value;
 
-    renderCard(createCard(newCard), cardList);
+  renderCard(newCardData, cardList);
 }
 
 formNewCardElement.addEventListener('submit', (evt) => {
     addNewCard(evt);
     closeModal(addCardModal);
 });
+
+const profileForm = new FormValidator(settings, formProfileElement);
+const newCardForm = new FormValidator(settings, formNewCardElement);
+
+profileForm.enableValidation();
+newCardForm.enableValidation();
+
+
+export { openModal, closeModal };
