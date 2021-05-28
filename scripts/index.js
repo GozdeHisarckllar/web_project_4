@@ -1,7 +1,6 @@
-import initialCards from "./data.js";
+import { settings, initialCards } from "./data.js";
 import Card from "./Card.js";
-import { settings, resetValidation } from "./resetForm.js";
-import { enableSubmitButton, FormValidator } from "./FormValidator.js";
+import FormValidator from "./FormValidator.js";
 
 const editProfileModal = document.querySelector('.modal_type_edit-profile');
 const formProfileElement = document.querySelector('.form_type_profile-info');
@@ -16,13 +15,16 @@ const addCardCloseButton = addCardModal.querySelector('.modal__close-btn');
 const cardTitleInput = document.querySelector('.form__item_el_card-title');
 const cardLinkInput = document.querySelector('.form__item_el_card-link');
 
-const imageDetailModal = document.querySelector('.modal_type_image-detail');
-
 const nameInput = document.querySelector('.form__item_el_name');
 const subtitleInput = document.querySelector('.form__item_el_subtitle');
 const profileName = document.querySelector('.profile__title-name');
 const profileSubtitle = document.querySelector('.profile__subtitle');
 
+const profileForm = new FormValidator(settings, formProfileElement);
+const newCardForm = new FormValidator(settings, formNewCardElement);
+
+profileForm.enableValidation();
+newCardForm.enableValidation();
 
 function submitForm(evt) {
     evt.preventDefault();
@@ -38,7 +40,8 @@ function openFilledForm() {
     subtitleInput.value = profileSubtitle.textContent;
     openModal(editProfileModal);
 
-    enableSubmitButton(settings, editSubmitButton);
+    editSubmitButton.classList.remove(settings.inactiveButtonClass);
+    editSubmitButton.removeAttribute("disabled");
 }
 
 function handleEscCloseKey(evt) {
@@ -69,9 +72,11 @@ function closeModal(modalType) {
     document.removeEventListener("keyup", handleEscCloseKey);
     modalType.removeEventListener("click", handleMouseClose);
 
-    if (modalType !== imageDetailModal) { 
-      resetValidation(settings, modalType);
-    } 
+    if (modalType === editProfileModal) {
+      profileForm.resetValidation();
+    } else if (modalType === addCardModal) {
+      newCardForm.resetValidation();
+    }
 }// also resets validation when closing popups with Esc key and mouse click events.                              
 
 formProfileElement.addEventListener('submit', submitForm);
@@ -118,12 +123,5 @@ formNewCardElement.addEventListener('submit', (evt) => {
     addNewCard(evt);
     closeModal(addCardModal);
 });
-
-const profileForm = new FormValidator(settings, formProfileElement);
-const newCardForm = new FormValidator(settings, formNewCardElement);
-
-profileForm.enableValidation();
-newCardForm.enableValidation();
-
 
 export { openModal, closeModal };

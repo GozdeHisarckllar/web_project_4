@@ -1,15 +1,3 @@
-import { settings } from "./resetForm.js";
-
-function enableSubmitButton(settings, buttonElement) {
-  buttonElement.classList.remove(settings.inactiveButtonClass);
-  buttonElement.removeAttribute("disabled");
-}
-
-function disableSubmitButton(settings, buttonElement) {
-  buttonElement.classList.add(settings.inactiveButtonClass);
-  buttonElement.setAttribute("disabled", true);
-}
-
 class FormValidator {
   constructor(settings, formElement) {
     this._inputSelector = settings.inputSelector;
@@ -17,6 +5,7 @@ class FormValidator {
     this._inactiveButtonClass = settings.inactiveButtonClass;
     this._inputErrorClass = settings.inputErrorClass;
     this._errorClass = settings.errorClass;
+    this._errorMessageSelector = settings.errorMessageSelector;
 
     this._formElement = formElement;
   }
@@ -53,11 +42,21 @@ class FormValidator {
     });
   }
 
+  _enableSubmitButton(buttonElement) {
+    buttonElement.classList.remove(this._inactiveButtonClass);
+    buttonElement.removeAttribute("disabled");
+  }
+  
+  _disableSubmitButton(buttonElement) {
+    buttonElement.classList.add(this._inactiveButtonClass);
+    buttonElement.setAttribute("disabled", true);
+  }
+  
   _toggleButtonState(inputList, buttonElement) {
     if (this._hasInvalidInput(inputList)) {
-      disableSubmitButton(settings, buttonElement);
+      this._disableSubmitButton(buttonElement);
     } else {
-      enableSubmitButton(settings, buttonElement);
+      this._enableSubmitButton(buttonElement);
     }
   }
 
@@ -82,6 +81,24 @@ class FormValidator {
 
     this._setEventListeners();
   }
+
+  resetValidation() {
+    const errorList = Array.from(this._formElement.querySelectorAll(this._errorMessageSelector));
+    const inputList = Array.from(this._formElement.querySelectorAll(this._inputSelector));
+    const submitButton = this._formElement.querySelector(this._submitButtonSelector);
+  
+    errorList.forEach((errorElement) => {
+      errorElement.classList.remove(this._errorClass);
+      errorElement.textContent = "";
+    });
+  
+    inputList.forEach((inputElement) => {
+      inputElement.classList.remove(this._inputErrorClass);
+    });
+    
+    this._formElement.reset();
+    this._disableSubmitButton(submitButton);
+  }
 }
 
-export { enableSubmitButton, disableSubmitButton, FormValidator };
+export default FormValidator;

@@ -1,3 +1,13 @@
+const settings = {  
+  formSelector: ".form",
+  inputSelector: ".form__item",
+  submitButtonSelector: ".form__button",
+  inactiveButtonClass: "form__button_disabled",
+  inputErrorClass: "form__item_type_error",
+  errorClass: "form__input-error_visible",
+  errorMessageSelector: ".form__input-error"
+}
+
 const initialCards = [
     {
       name: 'Yosemite Valley',
@@ -25,4 +35,4 @@ const initialCards = [
     }
 ];
 
-export default initialCards;
+export {initialCards, settings};

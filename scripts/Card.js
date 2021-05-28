@@ -21,39 +21,40 @@ class Card {
       .cloneNode(true);
   
     return cardElement;
-    }
+  }
   
-  _handleOpenImagePreview() {
-    modalImage.src = this._link;
-    modalImage.alt = this._name;
-    modalImageCaption.textContent = this._name;
+  _handleOpenImagePreview(name, link) {
+    modalImage.src = link;
+    modalImage.alt = name;
+    modalImageCaption.textContent = name;
   
     openModal(imageDetailModal);
-    }
+  }
   
   _handleCloseImagePreview() {
     closeModal(imageDetailModal);
   }
   
-  _toggleLikeButton(evt) {
-    evt.target.classList.toggle("card__like-btn_active");
+  _toggleLikeButton() {
+    this._element.querySelector(".card__like-btn").classList.toggle("card__like-btn_active");
   }
   
-  _removeCard(evt) {
-    evt.target.closest('.card').remove();
+  _removeCard() {
+    this._element.remove();
+    this._element = null;
   }
   
   _setEventListeners() {
-    this._element.addEventListener("click", (evt) => {
-      if (evt.target.classList.contains("card__image")) {
-        this._handleOpenImagePreview();
-      }
-      else if (evt.target.classList.contains("card__remove-btn")) {
-        this._removeCard(evt);
-      }
-      else if (evt.target.classList.contains("card__like-btn")) {
-        this._toggleLikeButton(evt);
-      }
+    this._element.querySelector(".card__image").addEventListener("click", () => {
+      this._handleOpenImagePreview(this._name, this._link);
+    });
+
+    this._element.querySelector(".card__like-btn").addEventListener("click", () => {
+      this._toggleLikeButton();
+    });
+
+    this._element.querySelector(".card__remove-btn").addEventListener("click", () => {
+      this._removeCard();
     });
 
     imageDetailCloseButton.addEventListener('click', () => {
