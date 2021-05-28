@@ -20,11 +20,11 @@ const subtitleInput = document.querySelector('.form__item_el_subtitle');
 const profileName = document.querySelector('.profile__title-name');
 const profileSubtitle = document.querySelector('.profile__subtitle');
 
-const profileForm = new FormValidator(settings, formProfileElement);
-const newCardForm = new FormValidator(settings, formNewCardElement);
+const profileFormValidator = new FormValidator(settings, formProfileElement);
+const newCardFormValidator = new FormValidator(settings, formNewCardElement);
 
-profileForm.enableValidation();
-newCardForm.enableValidation();
+profileFormValidator.enableValidation();
+newCardFormValidator.enableValidation();
 
 function submitForm(evt) {
     evt.preventDefault();
@@ -73,9 +73,9 @@ function closeModal(modalType) {
     modalType.removeEventListener("click", handleMouseClose);
 
     if (modalType === editProfileModal) {
-      profileForm.resetValidation();
+      profileFormValidator.resetValidation();
     } else if (modalType === addCardModal) {
-      newCardForm.resetValidation();
+      newCardFormValidator.resetValidation();
     }
 }// also resets validation when closing popups with Esc key and mouse click events.                              
 
