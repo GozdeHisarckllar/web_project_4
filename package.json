@@ -1,0 +1,39 @@
+{
+  "name": "web_project_4",
+  "version": "1.0.0",
+  "description": "* Intro\r * Description and functionality\r * Technologies",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --mode production",
+    "dev": "webpack serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GozdeHisarckllar/web_project_4.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GozdeHisarckllar/web_project_4/issues"
+  },
+  "homepage": "https://github.com/GozdeHisarckllar/web_project_4#readme",
+  "dependencies": {
+    "core-js": "^3.14.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.14.5",
+    "@babel/preset-env": "^7.14.5",
+    "autoprefixer": "^10.2.6",
+    "babel-loader": "^8.2.2",
+    "clean-webpack-plugin": "^4.0.0-alpha.0",
+    "css-loader": "^5.2.6",
+    "cssnano": "^5.0.6",
+    "html-webpack-plugin": "^5.3.1",
+    "mini-css-extract-plugin": "^1.6.0",
+    "postcss-loader": "^6.1.0",
+    "webpack": "^5.38.1",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.2"
+  }
+}

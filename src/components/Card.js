@@ -1,16 +1,9 @@
-import { openModal, closeModal } from "./index.js";
-
-const imageDetailModal = document.querySelector('.modal_type_image-detail');
-const imageDetailCloseButton = imageDetailModal.querySelector('.modal__close-btn');
-const modalImage = imageDetailModal.querySelector('.modal__image');
-const modalImageCaption = imageDetailModal.querySelector('.modal__image-caption');
-
-
 class Card {
-  constructor(data, templateSelector) {
+  constructor({ data, handleCardClick }, templateSelector) {
     this._name = data.name;
     this._link = data.link;
     this._templateSelector = templateSelector;
+    this._handleCardClick = handleCardClick;
   }
   
   _getTemplate() {
@@ -23,18 +16,10 @@ class Card {
     return cardElement;
   }
   
-  _handleOpenImagePreview(name, link) {
-    modalImage.src = link;
-    modalImage.alt = name;
-    modalImageCaption.textContent = name;
-  
-    openModal(imageDetailModal);
+  _handleOpenImagePreview({ name, link } ) {
+    this._handleCardClick({ name, link });
   }
-  
-  _handleCloseImagePreview() {
-    closeModal(imageDetailModal);
-  }
-  
+
   _toggleLikeButton() {
     this._element.querySelector(".card__like-btn").classList.toggle("card__like-btn_active");
   }
@@ -46,7 +31,7 @@ class Card {
   
   _setEventListeners() {
     this._element.querySelector(".card__image").addEventListener("click", () => {
-      this._handleOpenImagePreview(this._name, this._link);
+      this._handleOpenImagePreview({ name: this._name, link: this._link });
     });
 
     this._element.querySelector(".card__like-btn").addEventListener("click", () => {
@@ -55,10 +40,6 @@ class Card {
 
     this._element.querySelector(".card__remove-btn").addEventListener("click", () => {
       this._removeCard();
-    });
-
-    imageDetailCloseButton.addEventListener('click', () => {
-      this._handleCloseImagePreview();
     });
   }
   

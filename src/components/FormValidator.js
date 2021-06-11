@@ -96,7 +96,6 @@ class FormValidator {
       inputElement.classList.remove(this._inputErrorClass);
     });
     
-    this._formElement.reset();
     this._disableSubmitButton(submitButton);
   }
 }

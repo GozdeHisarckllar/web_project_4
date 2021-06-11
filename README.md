@@ -1,4 +1,4 @@
-# Project 7: Around The U.S.
+# Project 8: Around The U.S.
 
 ### Overview
 
@@ -16,7 +16,7 @@
 
 * The page contains HTML, CSS and JavaScript componenets. It is responsive to desktop and mobile screen sizes. The layout consists of flexbox and grid technologies. Also, the project follows the BEM methodology and file structure.
 
-* The creation of the photo cards and the form validation functionality were applied through classes in object-oriented programming. The components were gathered and implemented in accordance with the modular JavaScript approach.
+* The creation of the photo cards, popups and the form validation functionality were applied through classes in object-oriented programming. The code was refactored using loose coupling. The components were gathered and implemented in accordance with the modular JavaScript approach. After setting up Webpack bundling and building, JS transpilation and minification by using Babel, CSS minification and autoprefixing by using PostCSS and image/font processing were implemented.
 
 * The page includes photo cards which a user can add, like or remove and modal windows containing form elements which allows the user to edit the profile text content, lets the user view photos in detail or enables the user to create customized photo cards. These functionalities have been created via JavaScript and DOM methods. 
 
@@ -29,5 +29,9 @@
 * Grid
 * BEM methodology
 * Figma
+* Object-oriented programming
+* Webpack
+* Babel; a JavaScript compiler^
+* PostCSS
 
-[Link to the project](https://gozdehisarckllar.github.io/web_project_4/)
+[Link to the project](#)
