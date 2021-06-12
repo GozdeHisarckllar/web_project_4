@@ -16,7 +16,7 @@ class Card {
     return cardElement;
   }
   
-  _handleOpenImagePreview({ name, link } ) {
+  _handleOpenImagePreview({ name, link }) {
     this._handleCardClick({ name, link });
   }
 

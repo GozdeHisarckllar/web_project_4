@@ -1,15 +1,23 @@
 import "./index.css";
-import {
-  formSettings, profileSettings, cardSettings, initialCards, 
-  editButton, nameInput, subtitleInput, formProfileElement, 
-  formNewCardElement, editSubmitButton, addCardButton 
-} from "../utils/constants.js";
-import Card from "../components/Card.js";
+import { formSettings, profileSettings, cardSettings } from "../utils/constants.js";
+import { initialCards } from "../utils/data.js";
+import createCard from "../utils/utils.js";
 import FormValidator from "../components/FormValidator.js";
 import PopupWithForm from "../components/PopupWithForm.js";
 import PopupWithImage from "../components/PopupWithImage.js";
 import Section from "../components/Section.js";
 import UserInfo from "../components/UserInfo.js";
+
+export const editProfileModal = document.querySelector('.modal_type_edit-profile');
+export const formProfileElement = document.querySelector('.form_type_profile-info');
+export const editButton = document.querySelector('.profile__button_type_edit');
+export const editSubmitButton = editProfileModal.querySelector(".form__button");
+
+export const formNewCardElement = document.querySelector('.form_type_new-card-info');
+export const addCardButton = document.querySelector('.profile__button_type_add');
+
+export const nameInput = document.querySelector('.form__item_el_name');
+export const subtitleInput = document.querySelector('.form__item_el_subtitle');
 
 
 const profileFormValidator = new FormValidator(formSettings, formProfileElement);
@@ -40,22 +48,15 @@ editProfilePopup.setEventListeners();
 
 const addCardPopup = new PopupWithForm({
   handleFormSubmit : (inputInfo) => {
-    const newCard = new Card({ 
-      data: inputInfo, 
-      handleCardClick: (item) => {
-        imagePreviewPopup.open(item);
-      }}, 
-      cardSettings.templateSelector
-    );
-    const newCardElement = newCard.generateCard();
-    defaultcardList.addItem(newCardElement);
-  }, 
+    const newCard = createCard(inputInfo, imagePreviewPopup, 
+      cardSettings.templateSelector);
+    defaultCardList.addItem(newCard.generateCard());
+  },
   resetFormValidation : () => {
     newCardFormValidator.resetValidation();
   }}, 
   cardSettings.addCardPopupSelector
 );
-// also resets validation when closing popups with Esc key and mouse click events.
 
 addCardPopup.setEventListeners();
 
@@ -69,11 +70,11 @@ imagePreviewPopup.setEventListeners();
 editButton.addEventListener('click', () => {
   editProfilePopup.open();
 
-  nameInput.value = profileUserInfo.getUserInfo()["userName"];
-  subtitleInput.value = profileUserInfo.getUserInfo()["userSubtitle"];
+  const userInfo = profileUserInfo.getUserInfo();
+  nameInput.value = userInfo["userName"];
+  subtitleInput.value = userInfo["userSubtitle"];
 
-  editSubmitButton.classList.remove(formSettings.inactiveButtonClass);
-  editSubmitButton.removeAttribute("disabled");
+  profileFormValidator.enableSubmitButton(editSubmitButton);
 });
 
 addCardButton.addEventListener('click', () => {
@@ -81,21 +82,14 @@ addCardButton.addEventListener('click', () => {
 });
 
 
-const defaultcardList = new Section({ 
+const defaultCardList = new Section({ 
   items: initialCards, 
   renderer: (item) => {
-    const card = new Card({ 
-      data: item,
-      handleCardClick: (item) => {
-        imagePreviewPopup.open(item);
-      }
-    }, 
-      cardSettings.templateSelector
-    );
-    const cardElement = card.generateCard();
-    defaultcardList.addItem(cardElement);
+    const defaultCard = createCard(item, imagePreviewPopup, 
+      cardSettings.templateSelector);
+    defaultCardList.addItem(defaultCard.generateCard());
   }}, 
   cardSettings.cardContainerSelector
 );
 
-defaultcardList.renderItems();
+defaultCardList.renderItems();

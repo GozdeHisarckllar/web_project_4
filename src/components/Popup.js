@@ -19,7 +19,7 @@ class Popup {
   _handleEscClose(evt) {
     evt.preventDefault();
 
-    if (evt.key == "Escape") {
+    if (evt.key === "Escape") {
       this.close();
     }
   }

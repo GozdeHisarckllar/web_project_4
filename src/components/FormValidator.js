@@ -42,7 +42,7 @@ class FormValidator {
     });
   }
 
-  _enableSubmitButton(buttonElement) {
+  enableSubmitButton(buttonElement) {
     buttonElement.classList.remove(this._inactiveButtonClass);
     buttonElement.removeAttribute("disabled");
   }
@@ -56,7 +56,7 @@ class FormValidator {
     if (this._hasInvalidInput(inputList)) {
       this._disableSubmitButton(buttonElement);
     } else {
-      this._enableSubmitButton(buttonElement);
+      this.enableSubmitButton(buttonElement);
     }
   }
 

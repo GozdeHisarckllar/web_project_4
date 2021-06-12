@@ -31,7 +31,7 @@
 * Figma
 * Object-oriented programming
 * Webpack
-* Babel; a JavaScript compiler^
+* Babel
 * PostCSS
 
 [Link to the project](#)
