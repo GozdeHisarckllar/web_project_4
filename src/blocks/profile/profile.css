@@ -5,7 +5,7 @@
 @import url('./__button/profile__button.css');
 @import url('./__button/_type/profile__button_type_edit.css');
 @import url('./__button/_type/profile__button_type_add.css');
-
+@import url('./__button/_type/profile__button_type_avatar.css');
 
 .profile {
     max-width: 100%;

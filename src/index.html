@@ -14,11 +14,14 @@
     </header>
     <main class="content">
       <section class="profile">
-        <img class="profile__avatar-picture" src="<%=require('./images/cousteau.jpg')%>" alt="profile picture">
+        <div class="profile__avatar-picture">
+          <!--<img class="profile__avatar-picture" src="<%=require('./images/cousteau.jpg')%>" alt="profile picture">-->
+          <button class="profile__button profile__button_type_avatar hover-effect" aria-label="Change avatar" type="button"></button>
+        </div>
         <div class="profile__info">
-          <h1 class="profile__title-name">Jacques Cousteau</h1>
+          <h1 class="profile__title-name"></h1>
           <button class="profile__button profile__button_type_edit hover-effect" aria-label="Edit" type="button"></button>
-          <p class="profile__subtitle">Explorer</p>
+          <p class="profile__subtitle"></p>
         </div>
         <button class=" profile__button profile__button_type_add hover-effect" aria-label="Add" type="button"></button>
       </section>
@@ -37,11 +40,11 @@
           <fieldset class="form__input-container">
             <legend class="form__caption">Edit profile</legend>
             <label class="form__label">
-              <input type="text" class="form__item form__item_el_name" id="name-input" name="userName" placeholder="Name" minlength="2" maxlength="40" required>
+              <input type="text" class="form__item form__item_el_name" id="name-input" name="name" placeholder="Name" minlength="2" maxlength="40" required>
               <span class="form__input-error name-input-error"></span>
             </label>
             <label class="form__label">
-              <input type="text" class="form__item form__item_el_subtitle" id="subtitle-input" name="userSubtitle" placeholder="About me" minlength="2" maxlength="200" required>
+              <input type="text" class="form__item form__item_el_subtitle" id="subtitle-input" name="about" placeholder="About me" minlength="2" maxlength="200" required>
               <span class="form__input-error subtitle-input-error"></span>
             </label>
             <button type="submit" class="form__button">Save</button>
@@ -78,6 +81,32 @@
          <button class="modal__close-btn hover-effect" aria-label="Close" type="button"></button>
         </div>
        </div>
+       <div class="modal modal_type_change-avatar">
+        <div class="modal__container">
+         <form action="#" class="form form_type_avatar-info" name="profileForm"><!---formname-->
+           <fieldset class="form__input-container">
+             <legend class="form__caption">Change profile picture</legend>
+             <label class="form__label">
+               <input type="url" class="form__item form__item_el_avatar-link" id="avatar-link-input" name="avatar" placeholder="Picture URL" required>
+               <span class="form__input-error avatar-link-input-error"></span>
+             </label>
+             <button type="submit" class="form__button">Save</button>
+           </fieldset>
+         </form>
+         <button class="modal__close-btn hover-effect" aria-label="Close" type="button"></button>
+        </div>
+      </div>
+      <div class="modal modal_type_remove-verify">
+        <div class="modal__container">
+         <form action="#" class="form form_type_remove-verify" name="profileForm"><!---formname-->
+           <fieldset class="form__input-container">
+             <legend class="form__caption">Are you sure?</legend>
+             <button type="submit" class="form__button form__button_margin_small">Yes</button>
+           </fieldset>
+         </form>
+         <button class="modal__close-btn hover-effect" aria-label="Close" type="button"></button>
+        </div>
+      </div>
     </div>
     <template id="card-template">
       <li class="card">
@@ -85,7 +114,10 @@
         <div class="card__image"></div>
         <div class="card__info">
           <h2 class="card__title"></h2>
-          <button class="card__like-btn like-hover" aria-label="Like" type="button"></button>
+          <div class="card__like">
+            <button class="card__like-btn like-hover" aria-label="Like" type="button"></button>
+            <span class="card__like-count"></span>
+          </div>
         </div>
       </li>
     </template>

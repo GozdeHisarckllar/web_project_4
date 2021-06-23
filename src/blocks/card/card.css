@@ -4,6 +4,9 @@
 @import url('./__like-btn/_active/card__like-btn_active.css');
 @import url('./__title/card__title.css');
 @import url('./__remove-btn/card__remove-btn.css');
+@import url('./__remove-btn/_visible/card__remove-btn_visible.css');
+@import url('./__like/card__like.css');
+@import url('./__like-count/card__like-count.css');
 
 .card {
     display: flex;
@@ -14,6 +17,6 @@
     padding: 0;
     flex-direction: column;
     list-style: none;
-    background-color: #FFFFFF;
-    border-radius: 10px;
+    /*background-color: #FFFFFF;
+    border-radius: 10px;*/
 }

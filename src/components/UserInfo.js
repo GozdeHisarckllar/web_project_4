@@ -6,17 +6,18 @@ class UserInfo {
 
   getUserInfo() {
     this._userInfo = {};
-    this._userInfo["userName"] = this._profileUserName.textContent;
-    this._userInfo["userSubtitle"] = this._profileSubtitle.textContent;
+    this._userInfo["name"] = this._profileUserName.textContent;
+    this._userInfo["about"] = this._profileSubtitle.textContent;
 
     return this._userInfo;
   }
 
-  setUserInfo({ userName, userSubtitle }) {
-    this._profileUserName.textContent = userName;
-    this._profileSubtitle.textContent = userSubtitle;
+  setUserInfo({ name, about }) {
+    this._profileUserName.textContent = name;
+    this._profileSubtitle.textContent = about;
 
   }
 }
 
 export default UserInfo;
+//userName => name   userSubtitle => about

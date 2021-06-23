@@ -6,10 +6,10 @@
 @import url('./__item/_el/form__item_el_name.css');
 @import url('./__item/_el/form__item_el_subtitle.css');
 @import url('./__button/form__button.css');
+@import url('./__button/_margin_small/form__button_margin_small.css');
 @import url('./__button/_disabled/form__button_disabled.css');
 @import url('./__item/_type/form__item_type_error.css');
 @import url('./__label/form__label.css');
-
 
 .form {
     width: 100%;

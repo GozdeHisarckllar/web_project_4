@@ -11,7 +11,9 @@ export const formSettings = {
 export const profileSettings = {
   editPopupSelector: ".modal_type_edit-profile",
   nameSelector: ".profile__title-name", 
-  subtitleSelector: ".profile__subtitle"
+  subtitleSelector: ".profile__subtitle",
+  avatarSelector: ".profile__avatar-picture",
+  changeAvatarPopupSelector: ".modal_type_change-avatar"
 }
 
 export const cardSettings = {
