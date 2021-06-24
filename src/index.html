@@ -15,7 +15,6 @@
     <main class="content">
       <section class="profile">
         <div class="profile__avatar-picture">
-          <!--<img class="profile__avatar-picture" src="<%=require('./images/cousteau.jpg')%>" alt="profile picture">-->
           <button class="profile__button profile__button_type_avatar hover-effect" aria-label="Change avatar" type="button"></button>
         </div>
         <div class="profile__info">
@@ -55,7 +54,7 @@
       </div>
       <div class="modal modal_type_add-card">
         <div class="modal__container">
-         <form action="#" class="form form_type_new-card-info" name="profileForm">
+         <form action="#" class="form form_type_new-card-info" name="addNewCardForm">
            <fieldset class="form__input-container">
              <legend class="form__caption">New place</legend>
              <label class="form__label">
@@ -83,7 +82,7 @@
        </div>
        <div class="modal modal_type_change-avatar">
         <div class="modal__container">
-         <form action="#" class="form form_type_avatar-info" name="profileForm"><!---formname-->
+         <form action="#" class="form form_type_avatar-info" name="changeAvatarForm">
            <fieldset class="form__input-container">
              <legend class="form__caption">Change profile picture</legend>
              <label class="form__label">
@@ -98,7 +97,7 @@
       </div>
       <div class="modal modal_type_remove-verify">
         <div class="modal__container">
-         <form action="#" class="form form_type_remove-verify" name="profileForm"><!---formname-->
+         <form action="#" class="form form_type_remove-verify" name="removeVerifyForm">
            <fieldset class="form__input-container">
              <legend class="form__caption">Are you sure?</legend>
              <button type="submit" class="form__button form__button_margin_small">Yes</button>

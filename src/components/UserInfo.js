@@ -20,4 +20,3 @@ class UserInfo {
 }
 
 export default UserInfo;
-//userName => name   userSubtitle => about

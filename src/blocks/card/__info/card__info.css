@@ -3,8 +3,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 25px 18px 31px 21px;/*margin: 25px 18px 31px 21px*/
+    padding: 25px 18px 31px 21px;
     max-height: 28px;
-    background-color: #FFFFFF;/***/
-    border-radius: 0 0 10px 10px;/**border-radius:10px**/
+    background-color: #FFF;
+    border-radius: 0 0 10px 10px;
 }

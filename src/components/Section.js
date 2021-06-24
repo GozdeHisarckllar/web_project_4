@@ -11,7 +11,11 @@ class Section {
     });
   }
 
-  addItem(element) {          
+  addDefaultItem(element) {          
+    this._container.append(element);
+  }
+
+  addNewItem(element){
     this._container.prepend(element);
   }
 }
