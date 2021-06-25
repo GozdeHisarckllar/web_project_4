@@ -11,16 +11,19 @@ export const createCard = (itemInfo, popupClass, templateSelector, userInfo) => 
     handleRemoveVerify: (cardId) => {
       removeVerifierPopup.open();
       removeVerifierPopup.setRemoveVerifySubmitAction(() => {
+        removeVerifierPopup.renderLoading(true, "Deleting...");
         api.removeCard(cardId)
           .then(() => card.removeCard())
-          .catch((err) => { console.log(err); });
+          .then(() => removeVerifierPopup.close())
+          .catch((err) => { console.log(err); })
+          .finally(() => removeVerifierPopup.renderLoading(false));
       });
     },
     handleAddCardLike: (cardId) => {
       api.addCardLike(cardId)
         .then((updatedCardData) => {
           card.activateLikeButton(updatedCardData);
-          card.likes = updatedCardData.likes;
+          card.updateCardLikes(updatedCardData);
         })
         .catch((err) => { console.log(err); });
     },
@@ -28,7 +31,7 @@ export const createCard = (itemInfo, popupClass, templateSelector, userInfo) => 
       api.removeCardLike(cardId)
         .then((updatedCardData) => {
           card.deactivateLikeButton(updatedCardData);
-          card.likes = updatedCardData.likes;
+          card.updateCardLikes(updatedCardData);
         })
         .catch((err) => { console.log(err); });
     }

@@ -5,7 +5,6 @@ export const formSettings = {
   inactiveButtonClass: "form__button_disabled",
   inputErrorClass: "form__item_type_error",
   errorClass: "form__input-error_visible",
-  errorMessageSelector: ".form__input-error"
 }
 
 export const profileSettings = {
@@ -23,5 +22,6 @@ export const cardSettings = {
   templateSelector: "#card-template",
   imagePopupSelector: '.modal_type_image-detail',
   addCardPopupSelector: ".modal_type_add-card",
-  addCardButtonSelector: ".profile__button_type_add"
+  addCardButtonSelector: ".profile__button_type_add",
+  removeVerifierPopupSelector: ".modal_type_remove-verify"
 }

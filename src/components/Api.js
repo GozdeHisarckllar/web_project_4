@@ -4,18 +4,20 @@ class Api {
     this._headers = headers;
   }
   
+  _handleResponse(res) {
+    if (res.ok) {
+      return res.json();
+    }
+
+    return Promise.reject(`Error: ${err.status} ${err.statusText}`);
+  }
+
   getUserInfo() {
     return fetch(this._baseUrl + "/users/me", { 
         headers: this._headers
       }
     )
-    .then(res => {
-      if (res.ok) {
-        return res.json();
-      }
-
-      return Promise.reject(`Error: ${err.status} ${err.statusText}`);
-    });
+    .then(this._handleResponse);
   }
 
   getInitialCards() {
@@ -23,13 +25,7 @@ class Api {
         headers: this._headers
       }
     )
-    .then(res => {
-      if (res.ok) {
-        return res.json();
-      }
-
-      return Promise.reject(`Error: ${err.status} ${err.statusText}`);
-    });
+    .then(this._handleResponse);
   }
   
   setProfileAvatar({avatar}) {
@@ -41,13 +37,7 @@ class Api {
         })
       }
     )
-    .then(res => {
-      if (res.ok) {
-        return res.json();
-      }
-
-      return Promise.reject(`Error: ${err.status} ${err.statusText}`);
-    });
+    .then(this._handleResponse);
   }
 
   setUserProfileInfo({name, about}) {
@@ -60,13 +50,7 @@ class Api {
         })
       }
     )
-    .then(res => {
-      if (res.ok) {
-        return res.json();
-      }
-
-      return Promise.reject(`Error: ${err.status} ${err.statusText}`);
-    });
+    .then(this._handleResponse);
   }
 
   addNewCard({name, link}) {
@@ -79,13 +63,7 @@ class Api {
         })
       }
     )
-    .then(res => {
-      if (res.ok) {
-        return res.json();
-      }
-
-      return Promise.reject(`Error: ${err.status} ${err.statusText}`);
-    });
+    .then(this._handleResponse);
   }
 
   removeCard(cardId) {
@@ -94,13 +72,7 @@ class Api {
         headers: this._headers,
       }
     )
-    .then(res => {
-      if (res.ok) {
-        return res.json();
-      }
-
-      return Promise.reject(`Error: ${err.status} ${err.statusText}`);
-    });
+    .then(this._handleResponse);
   }
 
   addCardLike(cardId) {
@@ -109,13 +81,7 @@ class Api {
         headers: this._headers,
       }
     )
-    .then(res => {
-      if (res.ok) {
-        return res.json();
-      }
-
-      return Promise.reject(`Error: ${err.status} ${err.statusText}`);
-    });
+    .then(this._handleResponse);
   }
 
   removeCardLike(cardId) {
@@ -124,13 +90,7 @@ class Api {
         headers: this._headers,
       }
     )
-    .then(res => {
-      if (res.ok) {
-        return res.json();
-      }
-
-      return Promise.reject(`Error: ${err.status} ${err.statusText}`);
-    });
+    .then(this._handleResponse);
   }
 }
 

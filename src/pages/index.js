@@ -12,13 +12,8 @@ import UserInfo from "../components/UserInfo.js";
 
 const formProfileElement = document.querySelector('.form_type_profile-info');
 const editButton = document.querySelector(profileSettings.editButtonSelector);
-const editSubmitButton = formProfileElement.querySelector(formSettings.submitButtonSelector);
 const changeAvatarButton = document.querySelector(profileSettings.changeAvatarButtonSelector);
 const formChangeAvatarElement = document.querySelector(".form_type_avatar-info");
-
-const profilePicture = document.querySelector(profileSettings.avatarSelector);
-const profileUserName = document.querySelector(profileSettings.nameSelector);
-const profileUserAbout = document.querySelector(profileSettings.subtitleSelector);
 
 const formNewCardElement = document.querySelector('.form_type_new-card-info');
 const addCardButton = document.querySelector(cardSettings.addCardButtonSelector);
@@ -45,7 +40,8 @@ changeAvatarFormValidator.enableValidation();
 
 const profileUserInfo = new UserInfo({ 
   profileNameSelector: profileSettings.nameSelector, 
-  profileSubtitleSelector: profileSettings.subtitleSelector 
+  profileSubtitleSelector: profileSettings.subtitleSelector,
+  profileAvatarSelector: profileSettings.avatarSelector
 });
 
 const editProfilePopup = new PopupWithForm({ 
@@ -78,8 +74,6 @@ editButton.addEventListener('click', () => {
   const userInfo = profileUserInfo.getUserInfo();
   nameInput.value = userInfo["name"];
   subtitleInput.value = userInfo["about"];
-
-  profileFormValidator.enableSubmitButton(editSubmitButton);
 });
 
 
@@ -88,7 +82,7 @@ const changeAvatarPopup = new PopupWithForm({
       changeAvatarPopup.renderLoading(true, "Save", "Saving...");
       api.setProfileAvatar(avatarInfo)
         .then((avatarInfo) => {
-          profilePicture.style.backgroundImage = `url(${avatarInfo.avatar})`;
+          profileUserInfo.setUserAvatar(avatarInfo);
         })
         .then(() => changeAvatarPopup.close())
         .catch((err) => { console.log(err); })
@@ -113,9 +107,8 @@ api.getUserInfo()
   .then((info) => {
     const userInfo = info;
 
-    profileUserName.textContent = userInfo.name;
-    profileUserAbout.textContent = userInfo.about;
-    profilePicture.style.backgroundImage = `url(${userInfo.avatar})`;
+    profileUserInfo.setUserInfo(userInfo);
+    profileUserInfo.setUserAvatar(userInfo);
     
     return userInfo;
   })
@@ -170,7 +163,7 @@ imagePreviewPopup.setEventListeners();
 
 
 export const removeVerifierPopup = new PopupWithVerifier(
-  ".modal_type_remove-verify"
+  cardSettings.removeVerifierPopupSelector
 );
 
 removeVerifierPopup.setEventListeners();
