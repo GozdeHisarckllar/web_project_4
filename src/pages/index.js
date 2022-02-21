@@ -53,7 +53,7 @@ const editProfilePopup = new PopupWithForm({
       })
       .then(() => editProfilePopup.close())
       .catch((err) => { 
-        console.log(`Error: ${err.status} ${err.statusText}`);
+        console.log(err);
       })
       .finally(() => { 
         editProfilePopup.renderLoading(false, "Save");
